@@ -3,358 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>アイカツ！アンコール カードクローゼット</title>
+<title>🎀 アイカツ！アンコール Card Closet</title>
 <style>
 :root{--pink:#ff8fbe;--pink2:#fff0f7;--purple:#9b82e8;--ink:#403744;--muted:#8d8390;--line:#eee5ec;--bg:#fffafd}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
-header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);padding:14px 16px 10px}
-.title{font-weight:800;font-size:18px}.sub{font-size:11px;color:var(--muted);margin-top:3px}
-.tabs{display:flex;gap:7px;overflow:auto;padding-top:12px}.tab{border:0;background:#f7f1f6;border-radius:999px;padding:8px 12px;white-space:nowrap;color:#665d68}.tab.active{background:linear-gradient(135deg,#ff9bc6,#b79af4);color:white;font-weight:700}
-main{max-width:1000px;margin:auto;padding:16px 14px 90px}.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:14px;box-shadow:0 3px 15px #7e56740b}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:var(--pink2);border-radius:14px;padding:12px;text-align:center}.stat b{display:block;font-size:22px}.stat span{font-size:11px;color:var(--muted)}
-input,select,textarea{width:100%;border:1px solid #e6dce5;border-radius:11px;padding:10px;background:white;color:var(--ink);font:inherit}button{font:inherit;cursor:pointer}.btn{border:0;border-radius:11px;padding:9px 12px;background:#f1eaf1;color:#554b58}.btn.primary{background:linear-gradient(135deg,#ff8fbd,#9f87ea);color:#fff}.btn.small{padding:6px 9px;font-size:12px}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.grow{flex:1}.filters{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:8px}
-.cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:10px}.card{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff}.card img{width:100%;aspect-ratio:0.69;object-fit:cover;display:block;background:#faf7fa}.cardbody{padding:9px}.cid{font-size:12px;font-weight:800}.meta{font-size:11px;color:var(--muted);margin:3px 0 8px}.owned{display:flex;align-items:center;justify-content:space-between;gap:5px}.count{min-width:28px;text-align:center;font-weight:800}.round{width:30px;height:30px;border:0;border-radius:50%;background:#f4edf4}.badge{display:inline-block;border-radius:999px;padding:4px 7px;font-size:10px;margin:2px}.want{background:#fff0b8;color:#806500}.trade{background:#ffd9e8;color:#9b3e68}.ok{background:#dcf8e8;color:#26724a}
-.hidden{display:none}.empty{padding:30px;text-align:center;color:var(--muted)}
-.list{display:grid;gap:9px}.item{border:1px solid var(--line);border-radius:14px;padding:11px}.item h3{margin:0 0 5px;font-size:14px}.item p{margin:4px 0;color:#6e6470;font-size:12px}.item .actions{margin-top:8px;display:flex;gap:7px;flex-wrap:wrap}
-dialog{border:0;border-radius:18px;padding:0;width:min(520px,92vw);box-shadow:0 20px 70px #3d263a33}dialog::backdrop{background:#3d263a66}.modal{padding:18px}.modal h2{margin:0 0 14px;font-size:18px}.formgrid{display:grid;gap:10px}.help{font-size:11px;color:var(--muted);line-height:1.6}
-@media(max-width:600px){.filters{grid-template-columns:1fr}.cardgrid{grid-template-columns:repeat(2,1fr)}main{padding:12px 10px 90px}.stats b{font-size:19px}}
-
-.hero{background:linear-gradient(145deg,#fff5fa,#faf5ff);overflow:hidden}.heroTitle{font-weight:900;letter-spacing:.08em;font-size:15px;margin-bottom:12px}.heroTitle span{float:right;font-size:10px;color:#a58aa2;letter-spacing:.04em}
-.progress{height:8px;border-radius:99px;background:#eee5ec;margin:12px 0 5px;overflow:hidden}.progress>div{height:100%;border-radius:99px;background:linear-gradient(90deg,#ff91be,#a98bea)}.progressText{font-size:11px;color:#8d8390}.quick{margin-top:10px}
-.cardImageWrap{position:relative}.countBubble{position:absolute;right:7px;top:7px;min-width:28px;height:28px;padding:0 7px;border-radius:99px;background:#fff;box-shadow:0 3px 10px #6a52631f;display:flex;align-items:center;justify-content:center;font-weight:900;color:#9b5b8a}
-.card{transition:transform .15s,box-shadow .15s}.card:active{transform:scale(.98)}.card:hover{box-shadow:0 8px 25px #6a526318}
-.cardDetail{display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:18px;padding:18px}.cardDetail img{width:100%;border-radius:14px}.detailInfo{padding-top:8px}.detailInfo h2{margin:6px 0 12px}.detailCount{font-size:14px;margin-bottom:15px}.detailCount b{font-size:26px;color:#9b5b8a}
-@media(max-width:600px){.cardDetail{grid-template-columns:1fr}.cardDetail img{max-width:240px;margin:auto}.detailInfo{text-align:center}.detailInfo .row{justify-content:center}}
-#fallback{display:block}</style>
+header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);padding:13px 14px 9px}
+.title{font-weight:900;font-size:18px}.sub{font-size:11px;color:var(--muted);margin-top:3px}
+.tabs{display:flex;gap:6px;overflow:auto;padding-top:10px}.tab{border:0;background:#f7f1f6;border-radius:999px;padding:8px 11px;white-space:nowrap;color:#665d68}.tab.active{background:linear-gradient(135deg,#ff9bc6,#b79af4);color:#fff;font-weight:800}
+main{max-width:1000px;margin:auto;padding:13px 10px 80px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:13px;margin-bottom:12px;box-shadow:0 3px 15px #7e56740b}
+.hero{background:linear-gradient(145deg,#fff5fa,#faf5ff)}.heroTitle{font-weight:900;font-size:15px;letter-spacing:.04em}.heroTitle span{float:right;font-size:10px;color:#a58aa2}
+.stats,.coordStats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:10px}.stat,.coordStat{background:var(--pink2);border-radius:13px;padding:10px;text-align:center}.stat b,.coordStat b{display:block;font-size:20px;color:#9b5b8a}.stat span,.coordStat span{font-size:10px;color:var(--muted)}
+.progress{height:8px;border-radius:99px;background:#eee5ec;margin:11px 0 5px;overflow:hidden}.progress>div{height:100%;border-radius:99px;background:linear-gradient(90deg,#ff91be,#a98bea)}.progressText{font-size:11px;color:var(--muted)}
+input,select,textarea{width:100%;border:1px solid #e6dce5;border-radius:11px;padding:10px;background:#fff;color:var(--ink);font:inherit}textarea{min-height:80px}button{font:inherit;cursor:pointer}.btn{border:0;border-radius:11px;padding:9px 11px;background:#f1eaf1;color:#554b58}.btn.primary{background:linear-gradient(135deg,#ff8fbd,#9f87ea);color:#fff}.btn.small{padding:6px 9px;font-size:12px}.row{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.grow{flex:1}.filters{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:7px}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:9px}.card{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff}.card img{width:100%;aspect-ratio:.69;object-fit:cover;display:block;background:#faf7fa}.cardbody{padding:8px}.cid{font-size:11px;font-weight:900}.meta{font-size:10px;color:var(--muted);margin:3px 0 6px}.owned{display:flex;align-items:center;justify-content:space-between}.round{width:29px;height:29px;border:0;border-radius:50%;background:#f4edf4}.count{min-width:28px;text-align:center;font-weight:900}.badge{display:inline-block;border-radius:999px;padding:3px 6px;font-size:9px;margin:1px 2px 4px 0}.want{background:#fff0b8;color:#806500}.trade{background:#ffd9e8;color:#9b3e68}.ok{background:#dcf8e8;color:#26724a}
+.coordGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.coordCard{background:#fff;border:1px solid var(--line);border-radius:17px;padding:11px}.coordCard.done{background:linear-gradient(145deg,#fffafd,#fff7fb);border-color:#e7c7dc}.coordHead{display:flex;align-items:center;justify-content:space-between;gap:7px;margin-bottom:8px}.coordHead h3{margin:0;font-size:15px}.ratio{font-weight:900;color:#c05a8c;white-space:nowrap}.miniCards{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.miniCards img{width:100%;aspect-ratio:.69;object-fit:cover;border-radius:6px;background:#faf7fa}.missing{font-size:10px;color:var(--muted);line-height:1.5;margin-top:7px}.coordFilter{display:flex;gap:6px;overflow:auto;margin-top:10px}.coordFilter .active{background:#ffe0ee;color:#a13d6e;font-weight:800}
+.list{display:grid;gap:8px}.item{border:1px solid var(--line);border-radius:14px;padding:10px}.item h3{margin:0 0 4px;font-size:14px}.item p{margin:4px 0;color:#6e6470;font-size:11px}.actions{margin-top:7px;display:flex;gap:6px;flex-wrap:wrap}
+.empty{padding:26px;text-align:center;color:var(--muted);line-height:1.7}.help{font-size:11px;color:var(--muted);line-height:1.6}dialog{border:0;border-radius:18px;padding:0;width:min(560px,93vw);box-shadow:0 20px 70px #3d263a33}dialog::backdrop{background:#3d263a66}.modal{padding:17px}.modal h2{margin:0 0 13px;font-size:18px}.formgrid{display:grid;gap:9px}
+@media(max-width:600px){.filters{grid-template-columns:1fr}.coordGrid{grid-template-columns:1fr}.cardgrid{grid-template-columns:repeat(2,1fr)}main{padding:10px 8px 75px}}
+</style>
 </head>
 <body>
 <header>
-  <div class="title">🎀 アイカツ！アンコール Card Closet</div>
-  <div class="sub">ゆっちゃん専用・1弾85枚コレクション管理 ✨</div>
-  <div class="tabs" id="tabs"></div>
+<div class="title">🎀 アイカツ！アンコール Card Closet</div>
+<div class="sub">ゆっちゃん専用・1弾85枚コレクション管理 ✨</div>
+<div class="tabs" id="tabs"></div>
 </header>
-<main id="app">
-<div id="fallback">
-  <section class="panel hero">
-    <div class="heroTitle">MY COLLECTION <span>✦ 1st SERIES</span></div>
-    <div class="stats">
-      <div class="stat"><b>0</b><span>総所持枚数</span></div>
-      <div class="stat"><b>0/85</b><span>コンプ状況</span></div>
-      <div class="stat"><b>0</b><span>譲れる種類</span></div>
-    </div>
-    <div class="progress"><div style="width:0%"></div></div>
-    <div class="progressText">コレクション 0% ・ あと 85 種類</div>
-  </section>
-  <section class="panel">
-    <h2 style="margin:0 0 6px">🃏 カード一覧</h2>
-    <p class="help">この画面はiPhoneのファイルプレビュー用です。ボタンなどを使うときは「Safariで開く」またはファイルをSafariで開いてね♡</p>
-  </section>
-  <section class="cardgrid">
-<article class="card"><div class="cardImageWrap"><div style="aspect-ratio:.69;background:linear-gradient(145deg,#fff0f7,#f7f0ff);display:flex;align-items:center;justify-content:center;font-weight:900;color:#9b5b8a;font-size:15px">01</div></div><div class="cardbody"><div class="cid">E1-01_PR</div><div class="meta">プレミアムレア</div></div></article><article class="card"><div class="cardImageWrap"><div style="aspect-ratio:.69;background:linear-gradient(145deg,#fff0f7,#f7f0ff);display:flex;align-items:center;justify-content:center;font-weight:900;color:#9b5b8a;font-size:15px">02</div></div><div class="cardbody"><div class="cid">E1-02_PR</div><div class="meta">プレミアムレア</div></div></article><article class="card"><div class="cardImageWrap"><div style="aspect-ratio:.69;background:linear-gradient(145deg,#fff0f7,#f7f0ff);display:flex;align-items:center;justify-content:center;font-weight:900;color:#9b5b8a;font-size:15px">03</div></div><div class="cardbody"><div class="cid">E1-03_PR</div><div class="meta">プレミアムレア</div></div></article><article class="card"><div class="cardImageWrap"><div style="aspect-ratio:.69;background:linear-gradient(145deg,#fff0f7,#f7f0ff);display:flex;align-items:center;justify-content:center;font-weight:900;color:#9b5b8a;font-size:15px">04</div></div><div class="cardbody"><div class="cid">E1-04_PR</div><div class="meta">プレミアムレア</div></div></article><article class="card"><div class="cardImageWrap"><div style="aspect-ratio:.69;background:linear-gradient(145deg,#fff0f7,#f7f0ff);display:flex;align-items:center;justify-content:center;font-weight:900;color:#9b5b8a;font-size:15px">05</div></div><div class="cardbody"><div class="cid">E1-05_R</div><div class="meta">レア</div></div></article><article class="card"><div class="cardImageWrap"><div style="aspect-ratio:.69;background:linear-gradient(145deg,#fff0f7,#f7f0ff);display:flex;align-items:center;justify-content:center;font-weight:900;color:#9b5b8a;font-size:15px">06</div></div><div class="cardbody"><div class="cid">E1-06_R</div><div class="meta">レア</div></div></article><article class="card"><div class="cardImageWrap"><div style="aspect-ratio:.69;background:linear-gradient(145deg,#fff0f7,#f7f0ff);display:flex;align-items:center;justify-content:center;font-weight:900;color:#9b5b8a;font-size:15px">07</div></div><div class="cardbody"><div class="cid">E1-07_R</div><div class="meta">レア</div></div></article><article class="card"><div class="cardImageWrap"><div style="aspect-ratio:.69;background:linear-gradient(145deg,#fff0f7,#f7f0ff);display:flex;align-items:center;justify-content:center;font-weight:900;color:#9b5b8a;font-size:15px">08</div></div><div class="cardbody"><div class="cid">E1-08_R</div><div class="meta">レア</div></div></article><article class="card"><div class="cardImageWrap"><div style="aspect-ratio:.69;background:linear-gradient(145deg,#fff0f7,#f7f0ff);display:flex;align-items:center;justify-content:center;font-weight:900;color:#9b5b8a;font-size:15px">09</div></div><div class="cardbody"><div class="cid">E1-09_R</div><div class="meta">レア</div></div></article><article class="card"><div class="cardImageWrap"><div style="aspect-ratio:.69;background:linear-gradient(145deg,#fff0f7,#f7f0ff);display:flex;align-items:center;justify-content:center;font-weight:900;color:#9b5b8a;font-size:15px">10</div></div><div class="cardbody"><div class="cid">E1-10_R</div><div class="meta">レア</div></div></article>
-  </section>
-</div>
-</main>
-
+<main id="app"></main>
 <dialog id="modal"><div class="modal" id="modalBody"></div></dialog>
 
 <script>
-const CARDS = [
-{id:"E1-01_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-01_PR.webp", rarity:"PR"},
-{id:"E1-02_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-02_PR.webp", rarity:"PR"},
-{id:"E1-03_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-03_PR.webp", rarity:"PR"},
-{id:"E1-04_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-04_PR.webp", rarity:"PR"},
-{id:"E1-05_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-05_R.webp", rarity:"R"},
-{id:"E1-06_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-06_R.webp", rarity:"R"},
-{id:"E1-07_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-07_R.webp", rarity:"R"},
-{id:"E1-08_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-08_R.webp", rarity:"R"},
-{id:"E1-09_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-09_R.webp", rarity:"R"},
-{id:"E1-10_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-10_R.webp", rarity:"R"},
-{id:"E1-11_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-11_R.webp", rarity:"R"},
-{id:"E1-12_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-12_R.webp", rarity:"R"},
-{id:"E1-13_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-13_R.webp", rarity:"R"},
-{id:"E1-14_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-14_R.webp", rarity:"R"},
-{id:"E1-15_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-15_R.webp", rarity:"R"},
-{id:"E1-16_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-16_R.webp", rarity:"R"},
-{id:"E1-17_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-17_R.webp", rarity:"R"},
-{id:"E1-18_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-18_R.webp", rarity:"R"},
-{id:"E1-19_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-19_R.webp", rarity:"R"},
-{id:"E1-20_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-20_R.webp", rarity:"R"},
-{id:"E1-21_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-21_N.webp", rarity:"N"},
-{id:"E1-22_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-22_N.webp", rarity:"N"},
-{id:"E1-23_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-23_N.webp", rarity:"N"},
-{id:"E1-24_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-24_N.webp", rarity:"N"},
-{id:"E1-25_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-25_N.webp", rarity:"N"},
-{id:"E1-26_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-26_N.webp", rarity:"N"},
-{id:"E1-27_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-27_N.webp", rarity:"N"},
-{id:"E1-28_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-28_N.webp", rarity:"N"},
-{id:"E1-29_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-29_N.webp", rarity:"N"},
-{id:"E1-30_ER", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-30_ER.webp", rarity:"ER"},
-{id:"E1-31_ER", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-31_ER.webp", rarity:"ER"},
-{id:"E1-32_ER", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-32_ER.webp", rarity:"ER"},
-{id:"E1-33_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-33_PR.webp", rarity:"PR"},
-{id:"E1-34_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-34_PR.webp", rarity:"PR"},
-{id:"E1-35_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-35_PR.webp", rarity:"PR"},
-{id:"E1-36_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-36_PR.webp", rarity:"PR"},
-{id:"E1-37_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-37_R.webp", rarity:"R"},
-{id:"E1-38_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-38_R.webp", rarity:"R"},
-{id:"E1-39_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-39_R.webp", rarity:"R"},
-{id:"E1-40_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-40_R.webp", rarity:"R"},
-{id:"E1-41_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-41_N.webp", rarity:"N"},
-{id:"E1-42_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-42_N.webp", rarity:"N"},
-{id:"E1-43_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-43_N.webp", rarity:"N"},
-{id:"E1-44_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-44_N.webp", rarity:"N"},
-{id:"E1-45_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-45_N.webp", rarity:"N"},
-{id:"E1-46_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-46_N.webp", rarity:"N"},
-{id:"E1-47_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-47_N.webp", rarity:"N"},
-{id:"E1-48_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-48_N.webp", rarity:"N"},
-{id:"E1-49_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-49_N.webp", rarity:"N"},
-{id:"E1-50_ER", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-50_ER.webp", rarity:"ER"},
-{id:"E1-51_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-51_PR.webp", rarity:"PR"},
-{id:"E1-52_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-52_PR.webp", rarity:"PR"},
-{id:"E1-53_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-53_R.webp", rarity:"R"},
-{id:"E1-54_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-54_R.webp", rarity:"R"},
-{id:"E1-55_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-55_R.webp", rarity:"R"},
-{id:"E1-56_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-56_R.webp", rarity:"R"},
-{id:"E1-57_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-57_R.webp", rarity:"R"},
-{id:"E1-58_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-58_R.webp", rarity:"R"},
-{id:"E1-59_R", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-59_R.webp", rarity:"R"},
-{id:"E1-60_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-60_N.webp", rarity:"N"},
-{id:"E1-61_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-61_N.webp", rarity:"N"},
-{id:"E1-62_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-62_N.webp", rarity:"N"},
-{id:"E1-63_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-63_N.webp", rarity:"N"},
-{id:"E1-64_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-64_N.webp", rarity:"N"},
-{id:"E1-65_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-65_N.webp", rarity:"N"},
-{id:"E1-66_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-66_N.webp", rarity:"N"},
-{id:"E1-67_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-67_N.webp", rarity:"N"},
-{id:"E1-68_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-68_N.webp", rarity:"N"},
-{id:"E1-69_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-69_N.webp", rarity:"N"},
-{id:"E1-70_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-70_N.webp", rarity:"N"},
-{id:"E1-71_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-71_PR.webp", rarity:"PR"},
-{id:"E1-72_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-72_PR.webp", rarity:"PR"},
-{id:"E1-73_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-73_PR.webp", rarity:"PR"},
-{id:"E1-74_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-74_PR.webp", rarity:"PR"},
-{id:"E1-75_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-75_PR.webp", rarity:"PR"},
-{id:"E1-76_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-76_PR.webp", rarity:"PR"},
-{id:"E1-77_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-77_PR.webp", rarity:"PR"},
-{id:"E1-78_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-78_PR.webp", rarity:"PR"},
-{id:"E1-79_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-79_PR.webp", rarity:"PR"},
-{id:"E1-80_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-80_PR.webp", rarity:"PR"},
-{id:"E1-81_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-81_PR.webp", rarity:"PR"},
-{id:"E1-82_PR", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-82_PR.webp", rarity:"PR"},
-{id:"E1-83_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-83_N.webp", rarity:"N"},
-{id:"E1-84_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-84_N.webp", rarity:"N"},
-{id:"E1-85_N", img:"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-85_N.webp", rarity:"N"}
-];
-
-const TABS = [
-  ["cards","カード"],
-  ["trade","譲・求"],
-  ["coord","コーデ"],
-  ["array","配列"],
-  ["shops","お店"],
-  ["history","履歴"]
-];
-const KEY="aikatsuEncoreClosetV3";
-let state=JSON.parse(localStorage.getItem(KEY)||"null")||{
-  owned:{}, wants:{}, outfits:[], arrays:[], shops:[], history:[]
-};
-let current="cards", query="", rarity="all";
-
+const CARDS=[{"id":"E1-01_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-01_PR.webp","rarity":"PR"},{"id":"E1-02_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-02_PR.webp","rarity":"PR"},{"id":"E1-03_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-03_PR.webp","rarity":"PR"},{"id":"E1-04_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-04_PR.webp","rarity":"PR"},{"id":"E1-05_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-05_R.webp","rarity":"R"},{"id":"E1-06_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-06_R.webp","rarity":"R"},{"id":"E1-07_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-07_R.webp","rarity":"R"},{"id":"E1-08_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-08_R.webp","rarity":"R"},{"id":"E1-09_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-09_R.webp","rarity":"R"},{"id":"E1-10_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-10_R.webp","rarity":"R"},{"id":"E1-11_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-11_R.webp","rarity":"R"},{"id":"E1-12_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-12_R.webp","rarity":"R"},{"id":"E1-13_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-13_R.webp","rarity":"R"},{"id":"E1-14_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-14_R.webp","rarity":"R"},{"id":"E1-15_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-15_R.webp","rarity":"R"},{"id":"E1-16_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-16_R.webp","rarity":"R"},{"id":"E1-17_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-17_R.webp","rarity":"R"},{"id":"E1-18_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-18_R.webp","rarity":"R"},{"id":"E1-19_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-19_R.webp","rarity":"R"},{"id":"E1-20_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-20_R.webp","rarity":"R"},{"id":"E1-21_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-21_N.webp","rarity":"N"},{"id":"E1-22_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-22_N.webp","rarity":"N"},{"id":"E1-23_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-23_N.webp","rarity":"N"},{"id":"E1-24_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-24_N.webp","rarity":"N"},{"id":"E1-25_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-25_N.webp","rarity":"N"},{"id":"E1-26_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-26_N.webp","rarity":"N"},{"id":"E1-27_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-27_N.webp","rarity":"N"},{"id":"E1-28_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-28_N.webp","rarity":"N"},{"id":"E1-29_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-29_N.webp","rarity":"N"},{"id":"E1-30_ER","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-30_ER.webp","rarity":"ER"},{"id":"E1-31_ER","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-31_ER.webp","rarity":"ER"},{"id":"E1-32_ER","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-32_ER.webp","rarity":"ER"},{"id":"E1-33_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-33_PR.webp","rarity":"PR"},{"id":"E1-34_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-34_PR.webp","rarity":"PR"},{"id":"E1-35_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-35_PR.webp","rarity":"PR"},{"id":"E1-36_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-36_PR.webp","rarity":"PR"},{"id":"E1-37_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-37_R.webp","rarity":"R"},{"id":"E1-38_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-38_R.webp","rarity":"R"},{"id":"E1-39_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-39_R.webp","rarity":"R"},{"id":"E1-40_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-40_R.webp","rarity":"R"},{"id":"E1-41_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-41_N.webp","rarity":"N"},{"id":"E1-42_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-42_N.webp","rarity":"N"},{"id":"E1-43_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-43_N.webp","rarity":"N"},{"id":"E1-44_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-44_N.webp","rarity":"N"},{"id":"E1-45_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-45_N.webp","rarity":"N"},{"id":"E1-46_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-46_N.webp","rarity":"N"},{"id":"E1-47_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-47_N.webp","rarity":"N"},{"id":"E1-48_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-48_N.webp","rarity":"N"},{"id":"E1-49_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-49_N.webp","rarity":"N"},{"id":"E1-50_ER","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-50_ER.webp","rarity":"ER"},{"id":"E1-51_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-51_PR.webp","rarity":"PR"},{"id":"E1-52_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-52_PR.webp","rarity":"PR"},{"id":"E1-53_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-53_R.webp","rarity":"R"},{"id":"E1-54_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-54_R.webp","rarity":"R"},{"id":"E1-55_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-55_R.webp","rarity":"R"},{"id":"E1-56_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-56_R.webp","rarity":"R"},{"id":"E1-57_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-57_R.webp","rarity":"R"},{"id":"E1-58_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-58_R.webp","rarity":"R"},{"id":"E1-59_R","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-59_R.webp","rarity":"R"},{"id":"E1-60_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-60_N.webp","rarity":"N"},{"id":"E1-61_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-61_N.webp","rarity":"N"},{"id":"E1-62_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-62_N.webp","rarity":"N"},{"id":"E1-63_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-63_N.webp","rarity":"N"},{"id":"E1-64_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-64_N.webp","rarity":"N"},{"id":"E1-65_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-65_N.webp","rarity":"N"},{"id":"E1-66_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-66_N.webp","rarity":"N"},{"id":"E1-67_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-67_N.webp","rarity":"N"},{"id":"E1-68_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-68_N.webp","rarity":"N"},{"id":"E1-69_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-69_N.webp","rarity":"N"},{"id":"E1-70_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-70_N.webp","rarity":"N"},{"id":"E1-71_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-71_PR.webp","rarity":"PR"},{"id":"E1-72_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-72_PR.webp","rarity":"PR"},{"id":"E1-73_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-73_PR.webp","rarity":"PR"},{"id":"E1-74_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-74_PR.webp","rarity":"PR"},{"id":"E1-75_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-75_PR.webp","rarity":"PR"},{"id":"E1-76_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-76_PR.webp","rarity":"PR"},{"id":"E1-77_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-77_PR.webp","rarity":"PR"},{"id":"E1-78_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-78_PR.webp","rarity":"PR"},{"id":"E1-79_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-79_PR.webp","rarity":"PR"},{"id":"E1-80_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-80_PR.webp","rarity":"PR"},{"id":"E1-81_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-81_PR.webp","rarity":"PR"},{"id":"E1-82_PR","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-82_PR.webp","rarity":"PR"},{"id":"E1-83_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-83_N.webp","rarity":"N"},{"id":"E1-84_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-84_N.webp","rarity":"N"},{"id":"E1-85_N","img":"https://dcd.aikatsu.com/encore/images/cardlist/card/E1-85_N.webp","rarity":"N"}];
+const TABS=[["cards","カード"],["trade","譲・求"],["coord","コーデ"],["array","配列"],["shops","お店"],["history","履歴"]];
+const KEY="aikatsuEncoreClosetV4";
+let state=JSON.parse(localStorage.getItem(KEY)||"null")||{owned:{},wants:{},outfits:[],arrays:[],shops:[],history:[]};
+let current="cards",query="",rarity="all",showOnly="all",coordFilter="all";
 function save(){localStorage.setItem(KEY,JSON.stringify(state))}
 function card(id){return CARDS.find(c=>c.id===id)}
 function owned(id){return Number(state.owned[id]||0)}
-function addHistory(text){state.history.unshift({time:new Date().toLocaleString("ja-JP"),text});state.history=state.history.slice(0,100)}
-function setOwned(id,n){
-  n=Math.max(0,Number(n)||0); const old=owned(id);
-  if(n===old)return; state.owned[id]=n; addHistory(`${id}：所持数 ${old} → ${n}`); save(); render();
-}
-function rarityName(r){return ({PR:"プレミアムレア",R:"レア",N:"ノーマル",ER:"アンコールレア"})[r]||r}
 function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
-function maps(q){return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q)}
-
-function renderTabs(){
- document.getElementById("tabs").innerHTML=TABS.map(([id,n])=>`<button class="tab ${current===id?"active":""}" onclick="current='${id}';render()">${n}</button>`).join("");
-}
-function render(){
- renderTabs();
- const el=document.getElementById("app");
- el.innerHTML = current==="cards"?cardsPage():
-   current==="trade"?tradePage():
-   current==="coord"?coordPage():
-   current==="array"?arrayPage():
-   current==="shops"?shopsPage():historyPage();
-}
+function rarityName(r){return ({PR:"プレミアムレア",R:"レア",N:"ノーマル",ER:"アンコールレア"}[r]||r)}
+function addHistory(t){state.history.unshift({time:new Date().toLocaleString("ja-JP"),text:t});state.history=state.history.slice(0,100)}
+function setOwned(id,n){n=Math.max(0,Number(n)||0);let old=owned(id);if(n===old)return;state.owned[id]=n;addHistory(`${id}：所持数 ${old} → ${n}`);save();render()}
+function toggleWant(id){state.wants[id]=!state.wants[id];save();render()}
+function renderTabs(){document.getElementById("tabs").innerHTML=TABS.map(([id,n])=>`<button class="tab ${current===id?"active":""}" onclick="current='${id}';render()">${n}</button>`).join("")}
+function render(){renderTabs();document.getElementById("app").innerHTML=current==="cards"?cardsPage():current==="trade"?tradePage():current==="coord"?coordPage():current==="array"?arrayPage():current==="shops"?shopsPage():historyPage()}
 
 function cardsPage(){
- const total=CARDS.reduce((s,c)=>s+owned(c.id),0), unique=CARDS.filter(c=>owned(c.id)>0).length;
- const missing=CARDS.filter(c=>owned(c.id)===0).length;
- const pct=Math.round(unique/CARDS.length*100);
- const list=CARDS.filter(c=>(!query||c.id.toLowerCase().includes(query.toLowerCase()))&&(rarity==="all"||c.rarity===rarity));
- return `<section class="panel hero">
-  <div class="heroTitle">MY COLLECTION <span>✦ 1st SERIES</span></div>
-  <div class="stats">
-   <div class="stat"><b>${total}</b><span>総所持枚数</span></div>
-   <div class="stat"><b>${unique}/${CARDS.length}</b><span>コンプ状況</span></div>
-   <div class="stat"><b>${CARDS.filter(c=>owned(c.id)>=2).length}</b><span>譲れる種類</span></div>
-  </div>
-  <div class="progress"><div style="width:${pct}%"></div></div>
-  <div class="progressText">コレクション ${pct}%　・　あと ${missing} 種類</div>
- </section>
- <section class="panel">
-  <div class="filters">
-   <input placeholder="🔎 カード番号で検索 例：E1-01" value="${esc(query)}" oninput="query=this.value;render()">
-   <select onchange="rarity=this.value;render()"><option value="all">レアリティ：すべて</option><option value="PR" ${rarity==="PR"?"selected":""}>PR</option><option value="R" ${rarity==="R"?"selected":""}>R</option><option value="N" ${rarity==="N"?"selected":""}>N</option><option value="ER" ${rarity==="ER"?"selected":""}>ER</option></select>
-   <button class="btn" onclick="query='';rarity='all';render()">リセット</button>
-  </div>
-  <div class="quick row">
-   <button class="btn small" onclick="showOnly='missing';render()">未所持だけ</button>
-   <button class="btn small" onclick="showOnly='owned';render()">所持だけ</button>
-   <button class="btn small" onclick="showOnly='trade';render()">譲だけ</button>
-   <button class="btn small" onclick="showOnly='all';render()">全部</button>
-  </div>
- </section>
- <section class="cardgrid">${list.filter(c=>showOnly==='all'||showOnly===undefined||(showOnly==='missing'&&owned(c.id)===0)||(showOnly==='owned'&&owned(c.id)>0)||(showOnly==='trade'&&owned(c.id)>=2)).map(cardHTML).join("")}</section>`;
+ const total=CARDS.reduce((s,c)=>s+owned(c.id),0),unique=CARDS.filter(c=>owned(c.id)>0).length,pct=Math.round(unique/CARDS.length*100);
+ let list=CARDS.filter(c=>(!query||c.id.toLowerCase().includes(query.toLowerCase()))&&(rarity==="all"||c.rarity===rarity));
+ if(showOnly==="missing")list=list.filter(c=>owned(c.id)===0);if(showOnly==="owned")list=list.filter(c=>owned(c.id)>0);if(showOnly==="trade")list=list.filter(c=>owned(c.id)>=2);
+ return `<section class="panel hero"><div class="heroTitle">MY COLLECTION <span>✦ 1st SERIES</span></div><div class="stats">
+ <div class="stat"><b>${total}</b><span>総所持枚数</span></div><div class="stat"><b>${unique}/85</b><span>コンプ状況</span></div><div class="stat"><b>${CARDS.filter(c=>owned(c.id)>=2).length}</b><span>譲れる種類</span></div></div>
+ <div class="progress"><div style="width:${pct}%"></div></div><div class="progressText">コレクション ${pct}% ・ あと ${85-unique} 種類</div></section>
+ <section class="panel"><div class="filters"><input placeholder="🔎 E1-01 など" value="${esc(query)}" oninput="query=this.value;render()"><select onchange="rarity=this.value;render()"><option value="all">レアリティ：すべて</option><option value="PR">PR</option><option value="R">R</option><option value="N">N</option><option value="ER">ER</option></select><button class="btn" onclick="query='';rarity='all';showOnly='all';render()">リセット</button></div>
+ <div class="row" style="margin-top:8px"><button class="btn small" onclick="showOnly='all';render()">全部</button><button class="btn small" onclick="showOnly='missing';render()">未所持</button><button class="btn small" onclick="showOnly='owned';render()">所持</button><button class="btn small" onclick="showOnly='trade';render()">譲</button></div></section>
+ <section class="cardgrid">${list.map(cardHTML).join("")}</section>`
 }
-function cardHTML(c){
- const n=owned(c.id), w=!!state.wants[c.id], tr=n>=2;
- return `<article class="card" onclick="openCard('${c.id}')">
-   <div class="cardImageWrap"><img src="${c.img}" alt="${c.id}" loading="lazy">${n?`<span class="countBubble">${n}</span>`:""}</div>
-   <div class="cardbody">
-    <div class="cid">${c.id}</div><div class="meta">${rarityName(c.rarity)}</div>
-    ${w?'<span class="badge want">求</span>':""}${tr?'<span class="badge trade">譲</span>':""}${n===1?'<span class="badge ok">所持</span>':""}
-    <div class="owned" onclick="event.stopPropagation()">
-      <button class="round" onclick="setOwned('${c.id}',${n-1})">−</button>
-      <span class="count">${n}</span>
-      <button class="round" onclick="setOwned('${c.id}',${n+1})">＋</button>
-    </div>
-    <div class="row" style="margin-top:7px" onclick="event.stopPropagation()">
-      <button class="btn small" onclick="toggleWant('${c.id}')">${w?"💛 求を外す":"♡ 求にする"}</button>
-    </div>
-   </div>
- </article>`;
-}
-let showOnly="all";
-function openCard(id){
- const c=card(id), n=owned(id), w=!!state.wants[id];
- document.getElementById("modalBody").innerHTML=`<div class="cardDetail">
-  <img src="${c.img}" alt="${c.id}">
-  <div class="detailInfo">
-   <div class="cid">${c.id}</div>
-   <h2>${rarityName(c.rarity)}</h2>
-   <div class="detailCount">現在 <b>${n}</b> 枚</div>
-   <div class="row">
-    <button class="btn primary" onclick="setOwned('${c.id}',${n+1});closeModal()">＋ 1枚追加</button>
-    <button class="btn" onclick="toggleWant('${c.id}');closeModal()">${w?"求を外す":"♡ 求にする"}</button>
-   </div>
-   <p class="help">カード画像をタップすると詳細を確認できるよ。所持数が2枚以上なら自動で「譲」に入る仕様♡</p>
-   <button class="btn small" onclick="closeModal()">閉じる</button>
-  </div>
- </div>`;
- document.getElementById("modal").showModal();
-}
+function cardHTML(c){let n=owned(c.id),w=!!state.wants[c.id];return `<article class="card"><img src="${c.img}" alt="${c.id}" loading="lazy" onerror="this.style.opacity=.15"><div class="cardbody"><div class="cid">${c.id}</div><div class="meta">${rarityName(c.rarity)}</div>${w?'<span class="badge want">求</span>':""}${n>=2?'<span class="badge trade">譲</span>':n===1?'<span class="badge ok">所持</span>':""}<div class="owned"><button class="round" onclick="setOwned('${c.id}',${n-1})">−</button><span class="count">${n}</span><button class="round" onclick="setOwned('${c.id}',${n+1})">＋</button></div><button class="btn small" style="margin-top:6px;width:100%" onclick="toggleWant('${c.id}')">${w?"💛 求を外す":"♡ 求にする"}</button></div></article>`}
 
-function toggleWant(id){state.wants[id]=!state.wants[id];save();render()}
-
-function tradePage(){
- const wants=CARDS.filter(c=>state.wants[c.id]&&!owned(c.id));
- const trades=CARDS.filter(c=>owned(c.id)>=2);
- return `<section class="panel"><h2>💌 譲・求</h2><p class="help">所持数が2枚以上のカードは自動で「譲」に入るよ。1枚目を手元に残す想定✨</p></section>
- <section class="panel"><h3>求 (${wants.length})</h3><div class="list">${wants.length?wants.map(c=>`<div class="item"><b>${c.id}</b>　${rarityName(c.rarity)} <button class="btn small" onclick="toggleWant('${c.id}')">外す</button></div>`).join(""):"<div class=empty>まだ「求」がないよ♡</div>"}</div></section>
- <section class="panel"><h3>譲 (${trades.length})</h3><div class="list">${trades.length?trades.map(c=>`<div class="item"><b>${c.id}</b>　所持 ${owned(c.id)}枚　<button class="btn small" onclick="setOwned('${c.id}',1)">1枚残す</button></div>`).join(""):"<div class=empty>2枚以上持っているカードがここに出るよ♡</div>"}</div></section>`;
-}
+function tradePage(){let w=CARDS.filter(c=>state.wants[c.id]&&!owned(c.id)),t=CARDS.filter(c=>owned(c.id)>=2);return `<section class="panel"><h2>💌 譲・求</h2><div class="help">2枚以上持っているカードは自動で「譲」に入るよ。</div></section><section class="panel"><h3>求（${w.length}）</h3><div class="list">${w.length?w.map(c=>`<div class=item><b>${c.id}</b>　${rarityName(c.rarity)} <button class="btn small" onclick="toggleWant('${c.id}')">外す</button></div>`).join(""):"<div class=empty>まだ「求」がないよ♡</div>"}</div></section><section class="panel"><h3>譲（${t.length}）</h3><div class=list>${t.length?t.map(c=>`<div class=item><b>${c.id}</b>　所持 ${owned(c.id)}枚</div>`).join(""):"<div class=empty>2枚以上持っているカードがここに出るよ♡</div>"}</div></section>`}
 
 function coordPage(){
- return `<section class="panel"><div class="row"><div class="grow"><h2 style="margin:0">👗 コーデ</h2><div class="help">コーデ名と必要カードを登録すると、あと何枚で完成か自動計算するよ。</div></div><button class="btn primary" onclick="openOutfit()">＋ コーデを登録</button></div></section>
- <section class="list">${state.outfits.length?state.outfits.map((o,i)=>{
-   const need=o.cards.map(id=>({id,have:owned(id),missing:Math.max(0,1-owned(id))}));
-   const miss=need.filter(x=>x.missing).length;
-   return `<div class="item"><h3>✨ ${esc(o.name)} <span class="badge ${miss?"want":"ok"}">${miss?"あと "+miss+"枚":"完成！"}</span></h3>
-    <p>${need.map(x=>`${x.id} ${x.have?"✓":"×"}`).join("　")}</p>
-    <div class="actions"><button class="btn small" onclick="editOutfit(${i})">編集</button><button class="btn small" onclick="deleteOutfit(${i})">削除</button></div>
-   </div>`;
- }).join(""):"<div class=empty>まだコーデがないよ。<br>「＋ コーデを登録」から作ってみてね♡</div>"}</section>`;
+ const target=17,done=state.outfits.filter(o=>o.cards.length&&o.cards.every(id=>owned(id)>0)).length,registered=state.outfits.length;
+ const pct=Math.min(100,Math.round(done/target*100)),missing=state.outfits.reduce((n,o)=>n+o.cards.filter(id=>owned(id)===0).length,0);
+ let list=state.outfits.filter(o=>coordFilter==="all"||(coordFilter==="done"&&o.cards.length&&o.cards.every(id=>owned(id)>0))||(coordFilter==="missing"&&(!o.cards.length||o.cards.some(id=>owned(id)===0))));
+ return `<section class="panel hero"><div class="heroTitle">👗 コーデの揃い具合 <span>✦ 1st SERIES</span></div><div class="progress"><div style="width:${pct}%"></div></div><div class="progressText"><b>${done} / ${target} コーデ完成</b> ・ 登録 ${registered} コーデ</div>
+ <div class="coordStats"><div class="coordStat"><b>${done}</b><span>完成コーデ</span></div><div class="coordStat"><b>${missing}</b><span>あと必要な枚数</span></div><div class="coordStat"><b>${Math.max(0,target-done)}</b><span>未完成コーデ</span></div></div></section>
+ <section class="panel"><div class="row"><div class="grow"><h2 style="margin:0">コーデ図鑑</h2><div class="help">カードを登録すると、画像を並べて「あと何枚か」を自動計算するよ♡</div></div><button class="btn primary" onclick="openOutfit()">＋ コーデを登録</button></div><div class="coordFilter"><button class="btn small ${coordFilter==="all"?"active":""}" onclick="coordFilter='all';render()">すべて</button><button class="btn small ${coordFilter==="missing"?"active":""}" onclick="coordFilter='missing';render()">未完成</button><button class="btn small ${coordFilter==="done"?"active":""}" onclick="coordFilter='done';render()">完成</button></div></section>
+ <section class="coordGrid">${list.map(o=>{let idx=state.outfits.indexOf(o),need=o.cards.map(id=>({id,have:owned(id),c:card(id)})),m=need.filter(x=>!x.have),d=need.length&&!m.length;return `<article class="coordCard ${d?"done":""}"><div class="coordHead"><h3>${d?"🎉":"✨"} ${esc(o.name)}</h3><div class=ratio>${need.length-m.length} / ${need.length}</div></div><div class=miniCards>${need.map(x=>`<img src="${x.c?.img||""}" style="opacity:${x.have?1:.25}" title="${x.id}">`).join("")}</div><div class=missing>${d?"✨ コーデ完成！":"あと "+m.length+"枚："+m.map(x=>x.id).join("、")}</div><div class=actions><button class="btn small" onclick="openOutfit(${idx})">編集</button><button class="btn small" onclick="deleteOutfit(${idx})">削除</button></div></article>`}).join("")}</section>
+ ${!state.outfits.length?'<section class="panel"><div class=empty>まだコーデが登録されてないよ🥹<br>「＋ コーデを登録」から追加してね♡<br><small>公式1弾カードリストは85枚です。</small></div></section>':""}`
 }
+
 function openOutfit(index=null){
- const o=index==null?{name:"",cards:[]}:{...state.outfits[index]};
- document.getElementById("modalBody").innerHTML=`<h2>👗 コーデを登録</h2><div class=formgrid>
-  <input id="ofName" placeholder="コーデ名" value="${esc(o.name)}">
-  <input id="ofCards" placeholder="カード番号をカンマ区切り　例：E1-01_PR,E1-02_PR" value="${esc(o.cards.join(","))}">
-  <div class=help>今はカード番号を入力して登録する方式。あとで公式データからコーデ情報を自動で入れられるように拡張できるよ。</div>
-  <div class=row><button class="btn primary" onclick="saveOutfit(${index==null?"null":index})">保存</button><button class=btn onclick="closeModal()">キャンセル</button></div>
- </div>`;document.getElementById("modal").showModal();
+ let o=index==null?{name:"",cards:[]}:{...state.outfits[index]};
+ document.getElementById("modalBody").innerHTML=`<h2>👗 コーデを登録</h2><div class=formgrid><input id="ofName" placeholder="コーデ名　例：オーロラキス" value="${esc(o.name)}"><input id="ofCards" placeholder="E1-01_PR,E1-02_PR,E1-03_PR,E1-04_PR" value="${esc(o.cards.join(","))}"><div class=help>カード番号をカンマ区切りで入れてね。画像が自動で並び、所持数が0のカードは薄く表示されるよ。</div><div class=row><button class="btn primary" onclick="saveOutfit(${index==null?"null":index})">保存</button><button class=btn onclick="closeModal()">キャンセル</button></div></div>`;
+ document.getElementById("modal").showModal()
 }
-function saveOutfit(index){
- const name=document.getElementById("ofName").value.trim()||"名前なしコーデ";
- const cards=document.getElementById("ofCards").value.split(",").map(x=>x.trim()).filter(x=>CARDS.some(c=>c.id===x));
- if(!cards.length){alert("カード番号を1枚以上入れてね！");return}
- const o={name,cards:[...new Set(cards)]}; if(index==null)state.outfits.push(o);else state.outfits[index]=o;
- addHistory(`コーデ「${name}」を登録`);save();closeModal();render();
-}
-function editOutfit(i){openOutfit(i)}
+function saveOutfit(index){let name=document.getElementById("ofName").value.trim()||"名前なしコーデ";let ids=document.getElementById("ofCards").value.split(/[,、\s]+/).map(x=>x.trim()).filter(Boolean).filter(x=>CARDS.some(c=>c.id===x));ids=[...new Set(ids)];if(!ids.length){alert("カード番号を1枚以上入れてね！");return}let o={name,cards:ids};if(index==null)state.outfits.push(o);else state.outfits[index]=o;addHistory(`コーデ「${name}」を登録`);save();closeModal();render()}
 function deleteOutfit(i){if(confirm("このコーデを削除する？")){state.outfits.splice(i,1);save();render()}}
 function closeModal(){document.getElementById("modal").close()}
 
-function arrayPage(){
- return `<section class="panel"><div class="row"><div class=grow><h2 style="margin:0">🔮 配列</h2><div class=help>記録した配列から、途中まで見つけたカードの「次」を探せるようにするよ。</div></div><button class="btn primary" onclick="openArray()">＋ 配列を記録</button></div></section>
- <section class="panel"><h3>次のカードを検索</h3><div class=row><input id="seqSearch" class=grow placeholder="見つけた順に入力　例：E1-01_PR,E1-02_PR"><button class="btn primary" onclick="findNext()">照合</button></div><div id="nextResult" style="margin-top:10px"></div></section>
- <section class="list">${state.arrays.length?state.arrays.map((a,i)=>`<div class=item><h3>📌 ${esc(a.name)}</h3><p>${a.cards.join(" → ")}</p>${a.note?`<p>メモ：${esc(a.note)}</p>`:""}<div class=actions><button class=btn small onclick="deleteArray(${i})">削除</button></div></div>`).join(""):"<div class=empty>まだ配列を記録してないよ♡</div>"}</section>`;
-}
-function openArray(){
- document.getElementById("modalBody").innerHTML=`<h2>🔮 配列を記録</h2><div class=formgrid>
- <input id="arName" placeholder="配列名 例：筐体A 10/6">
- <input id="arCards" placeholder="左から順にカード番号を入力">
- <textarea id="arNote" placeholder="メモ（台・場所など）"></textarea>
- <div class=row><button class="btn primary" onclick="saveArray()">保存</button><button class=btn onclick="closeModal()">キャンセル</button></div></div>`;
- document.getElementById("modal").showModal();
-}
-function saveArray(){
- const name=document.getElementById("arName").value.trim()||"名前なし配列";
- const cards=document.getElementById("arCards").value.split(/[,\s→]+/).map(x=>x.trim()).filter(x=>CARDS.some(c=>c.id===x));
- if(!cards.length){alert("カード番号を1枚以上入れてね！");return}
- state.arrays.push({name,cards,note:document.getElementById("arNote").value.trim()});
- addHistory(`配列「${name}」を記録`);save();closeModal();render();
-}
-function deleteArray(i){if(confirm("この配列を削除する？")){state.arrays.splice(i,1);save();render()}}
-function findNext(){
- const q=document.getElementById("seqSearch").value.split(/[,\s→]+/).map(x=>x.trim()).filter(Boolean);
- const out=document.getElementById("nextResult");
- if(!q.length){out.innerHTML="<div class=empty>カード番号を入れてね！</div>";return}
- const hits=[];
- for(const a of state.arrays){
-   for(let i=0;i<=a.cards.length-q.length;i++){
-     if(q.every((v,j)=>a.cards[i+j]===v)){
-       const next=a.cards[i+q.length];
-       if(next)hits.push({next,name:a.name});
-     }
-   }
- }
- const unique=[...new Map(hits.map(x=>[x.next,x])).values()];
- out.innerHTML=unique.length?`<div class=item><b>候補：${unique.map(x=>x.next).join(" / ")}</b><p>${unique.map(x=>`${x.next}（${esc(x.name)}）`).join("<br>")}</p></div>`:`<div class=empty>一致する記録が見つからなかったよ🥲</div>`;
-}
+function arrayPage(){return `<section class="panel"><div class=row><div class=grow><h2 style="margin:0">🔮 配列</h2><div class=help>記録した配列から「次に出そうなカード」を探せるよ。</div></div><button class="btn primary" onclick="openArray()">＋ 配列を記録</button></div></section><section class=panel><h3>次のカードを検索</h3><div class=row><input id=seq class=grow placeholder="E1-01_PR,E1-02_PR"><button class="btn primary" onclick=findNext()>照合</button></div><div id=result style="margin-top:8px"></div></section><section class=list>${state.arrays.length?state.arrays.map((a,i)=>`<div class=item><h3>📌 ${esc(a.name)}</h3><p>${a.cards.join(" → ")}</p><div class=actions><button class="btn small" onclick="deleteArray(${i})">削除</button></div></div>`).join(""):"<div class=empty>まだ配列を記録してないよ♡</div>"}</section>`}
+function openArray(){document.getElementById("modalBody").innerHTML=`<h2>🔮 配列を記録</h2><div class=formgrid><input id=an placeholder="配列名"><input id=ac placeholder="カード番号を左から順に"><textarea id=ax placeholder="メモ"></textarea><div class=row><button class="btn primary" onclick=saveArray()>保存</button><button class=btn onclick=closeModal()>キャンセル</button></div></div>`;document.getElementById("modal").showModal()}
+function saveArray(){let name=document.getElementById("an").value.trim()||"名前なし配列",ids=document.getElementById("ac").value.split(/[,、\s→]+/).filter(x=>CARDS.some(c=>c.id===x));if(!ids.length){alert("カード番号を入れてね！");return}state.arrays.push({name,cards:ids,note:document.getElementById("ax").value.trim()});save();closeModal();render()}
+function deleteArray(i){state.arrays.splice(i,1);save();render()}
+function findNext(){let q=document.getElementById("seq").value.split(/[,、\s→]+/).filter(Boolean),hits=[];for(let a of state.arrays)for(let i=0;i<=a.cards.length-q.length;i++)if(q.every((v,j)=>a.cards[i+j]===v)&&a.cards[i+q.length])hits.push(a.cards[i+q.length]);document.getElementById("result").innerHTML=hits.length?`<div class=item><b>候補：${[...new Set(hits)].join(" / ")}</b></div>`:"<div class=empty>一致する配列がないよ🥲</div>"}
 
-function shopsPage(){
- return `<section class="panel"><h2 style="margin-top:0">📍 あそべるお店</h2>
- <p class=help>今は現在地を勝手に取得しない仕様にして、検索ボタンから地図を開く形にしてあるよ。場所を入力すれば近いお店を探せる✨</p>
- <div class=row><input id="shopQ" class=grow placeholder="例：松戸 アイカツ アンコール"><button class="btn primary" onclick="searchMap()">🗺 地図で探す</button></div>
- <div style="margin-top:10px"><a class="btn" target="_blank" href="https://dcd.aikatsu.com/encore/shop/">公式「あそべるお店」</a></div>
- </section>
- <section class="panel"><div class=row><h3 class=grow>自分で登録したお店</h3><button class="btn primary" onclick="openShop()">＋ 登録</button></div>
- <div class=list>${state.shops.length?state.shops.map((s,i)=>`<div class=item><h3>📍 ${esc(s.name)}</h3><p>${esc(s.address||"住所メモなし")}</p><p>筐体：${esc(s.machine||"未入力")}　${s.memo?`／ ${esc(s.memo)}`:""}</p><div class=actions><a class="btn small" target="_blank" href="${maps((s.address||"")+" "+s.name)}">地図</a><button class=btn small onclick="deleteShop(${i})">削除</button></div></div>`).join(""):"<div class=empty>まだ登録したお店はないよ♡</div>"}</div></section>`;
-}
-function searchMap(){const q=document.getElementById("shopQ").value.trim()||"アイカツ アンコール あそべるお店";window.open(maps(q),"_blank")}
-function openShop(){
- document.getElementById("modalBody").innerHTML=`<h2>📍 お店を登録</h2><div class=formgrid>
- <input id="sn" placeholder="店名"><input id="sa" placeholder="住所・施設名"><input id="sm" placeholder="筐体数など"><textarea id="sx" placeholder="メモ"></textarea>
- <div class=row><button class="btn primary" onclick="saveShop()">保存</button><button class=btn onclick="closeModal()">キャンセル</button></div></div>`;
- document.getElementById("modal").showModal();
-}
-function saveShop(){const s={name:document.getElementById("sn").value.trim()||"名前なし",address:document.getElementById("sa").value.trim(),machine:document.getElementById("sm").value.trim(),memo:document.getElementById("sx").value.trim()};state.shops.push(s);save();closeModal();render()}
-function deleteShop(i){if(confirm("このお店を削除する？")){state.shops.splice(i,1);save();render()}}
+function shopsPage(){return `<section class=panel><h2>📍 お店</h2><div class=help>公式の「あそべるお店」を開いたり、自分用のお店メモを残せるよ。</div><div class=row style="margin-top:8px"><a class=btn target=_blank href="https://dcd.aikatsu.com/encore/shop/">公式「あそべるお店」</a><button class="btn primary" onclick=openShop()>＋ お店を登録</button></div></section><section class=list>${state.shops.length?state.shops.map((s,i)=>`<div class=item><h3>📍 ${esc(s.name)}</h3><p>${esc(s.address)}</p><p>${esc(s.memo)}</p><button class="btn small" onclick="deleteShop(${i})">削除</button></div>`).join(""):"<div class=empty>まだお店がないよ♡</div>"}</section>`}
+function openShop(){document.getElementById("modalBody").innerHTML=`<h2>📍 お店を登録</h2><div class=formgrid><input id=sn placeholder="店名"><input id=sa placeholder="住所"><textarea id=sx placeholder="メモ"></textarea><div class=row><button class="btn primary" onclick=saveShop()>保存</button><button class=btn onclick=closeModal()>キャンセル</button></div></div>`;document.getElementById("modal").showModal()}
+function saveShop(){state.shops.push({name:document.getElementById("sn").value.trim()||"名前なし",address:document.getElementById("sa").value.trim(),memo:document.getElementById("sx").value.trim()});save();closeModal();render()}
+function deleteShop(i){state.shops.splice(i,1);save();render()}
 
-function historyPage(){
- return `<section class="panel"><div class=row><h2 class=grow style="margin:0">📝 履歴</h2><button class=btn onclick="state.history=[];save();render()">履歴を消す</button></div></section>
- <section class=list>${state.history.length?state.history.map(x=>`<div class=item><b>${esc(x.text)}</b><p>${esc(x.time)}</p></div>`).join(""):"<div class=empty>まだ履歴はないよ♡</div>"}</section>`;
-}
+function historyPage(){return `<section class=panel><div class=row><h2 class=grow style="margin:0">📝 履歴</h2><button class=btn onclick="state.history=[];save();render()">履歴を消す</button></div></section><section class=list>${state.history.length?state.history.map(x=>`<div class=item><b>${esc(x.text)}</b><p>${esc(x.time)}</p></div>`).join(""):"<div class=empty>まだ履歴はないよ♡</div>"}</section>`}
 render();
 </script>
 </body>
